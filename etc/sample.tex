@@ -1,0 +1,43 @@
+\begin{itemize}
+\item The \texttt{Node} class has ``prev'' links as well as ``next''
+  links.  Aren't these redundant?  What use are they?
+\item What is going on with the warning suppression on the default
+  constructor for a Node?  Isn't that dangerous?
+\item The code for \texttt{wellFormed} doesn't use Floyd's algorithm
+  (Tortoise \& Hare).  How can we sure there aren't any cycles?
+\item The dummy's data is required to be the dummy.  What does that
+  mean?  How is that possible?
+\item On the other hand, in the loop we require that the data
+  \emph{not} be the node.  Aren't these requirements contradictory?
+%\item The \texttt{add} works from tail backwards to insert an element.
+  %  What is going on?  Isn't that just more complicated?
+\item Why is the efficiency override for \texttt{clear} optional?
+  Is the code given much faster than the code from
+  \texttt{AbstractCollection} ? (Remind us how that is done!)
+  Why won't we fail efficiency tests if we don't override
+  \texttt{clear} ?
+\item The override for \texttt{addAll} is labeled ``decorate.''  What
+  does that mean?
+\item What special case do we handle and why?  Why don't we use an iterator?
+\item What does \texttt{super.addAll(c)} do?
+\item Why does the \texttt{wellFormed} for the iterator return true if
+  the versions do \emph{not} match?
+%\item Why does the iterator's constructor say ``canRemove'' is false?
+%  Does that mean we can never remove the first element?
+%\item Why doesn't the second iterator constructor use binary search to
+%  find where to start the iteration?  Wouldn't that be more efficient?
+\item The \texttt{next} method starts with three checks.  What could
+  cause each of these to fail?  Is the order we check them important?
+%\item Why does the \texttt{next} method check `\texttt{canRemove}' and
+%  if it's false, set it to true?  Wouldn't it simpler to just always
+%  set it to true?
+\item The \texttt{remove} code does a lot of pointer changes.  What's
+  good about the way it is written (apart from being correct)?
+\item It makes sense to have cases for (1) adding at the head, (2)
+  adding at the tail, (3) adding in the middle and (4) adding the very
+  first element.  How are these four cases handled  by
+  \texttt{addAfter} without any if's?
+  % Why is it considering good form to have an ``else'' with every ``if.''
+\end{itemize}
+
+% LocalWords:  prev wellFormed AbstractCollection addAll addAfter

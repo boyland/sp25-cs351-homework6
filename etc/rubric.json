@@ -1,0 +1,589 @@
+{
+	"title": "Homework #6 Rubric",
+	"criteria": {
+	"0": {
+	    "description": "Quality: Name",
+	    "long_description": "The student's name is added to files.",
+	    "ratings": {
+		"1": {
+		    "description": "Full Marks",
+		    "points": 1,
+		    "long_description": "Student's name is on all code files they edit in a comment at the top."
+		},
+		"3": {
+		    "description": "No Marks",
+		    "points": 0
+	    }
+	    }
+	},
+	"1": {
+	    "description": "Quality: Show Work",
+	    "long_description": "Does the code provide enough commits to show the work?",
+	    "ratings": {
+		"1": {
+		    "description": "Full Marks",
+		    "points": 1,
+		    "long_description": "Sufficient contentful commits."
+		},
+		"2": {
+		    "description": "Two Major",
+		    "points": 0.8,
+		    "long_description": "Two commits together are bigger than the rest combined."
+		},
+		"3": {
+		    "description": "One Major",
+		    "points": 0.5,
+		    "long_description": "More than a single commit, but one commit bigger than the rest combined."
+		},
+		"4": {
+		    "description": "No Marks",
+		    "points": 0,
+		    "long_description": "No commits, or only a single commit after the initial commit."
+		}
+	    }
+	},
+	"2": {
+	    "description": "Quality: Compiles cleanly",
+	    "long_description": "No errors or warnings during compilation",
+	    "ratings": {
+		"1": {
+		    "description": "Full Marks",
+		    "points": 2,
+		    "long_description": "No compiler errors or warnings; no warnings suppressed except those given permission for."
+		},
+		"2": {
+		    "description": "Few warnings",
+		    "points": 1.5,
+		    "long_description": "No errors and all the warnings concern unused things, or things which we gave permission to suppress."
+		},
+		"3": {
+		    "description": "No errors",
+		    "points": 1,
+		    "long_description": "No compiler errors (no stop signs), but \"real\" warnings or improper suppression."
+		},
+		"4": {
+		    "description": "Partial",
+		    "points": 0.5,
+		    "long_description": "The only errors are those that don't affect execution (e.g import errors)."
+		},
+		"5": {
+		    "description": "No Marks",
+		    "points": 0,
+		    "long_description": "No changes, or errors in executable code."
+		}
+	    }
+	},
+	"4": {
+	    "description": "Quality: Code changes",
+	    "long_description": "Changes appropriate",
+	    "ratings": {
+		"1": {
+		    "description": "Full Marks",
+		    "points": 1,
+		    "long_description": "Correct files changed."
+		},
+		"2": {
+		    "description": "Partial",
+		    "points": 0.5,
+		    "long_description": "Changes in test files involving only spacing."
+		},
+		"3": {
+		    "description": "No Marks",
+		    "points": 0,
+		    "long_description": "No changes at all, or files changed that should not be changed."
+		}
+	    }
+	},
+	"5": {
+	    "description": "Quality: Override",
+	    "long_description": "The @Override tag used appropriately.",
+	    "ratings": {
+		"1": {
+		    "description": "Full Marks",
+		    "points": 1,
+		    "long_description": "All new method overrides (add/size/iterator/clear/hasNext/next/remove) are marked @Override and the (correct) reason given for override.  (e.g. \"required\" or \"implementation\" or \"efficiency\" or \"decorate\").  No unnecessary @Overrides."
+		},
+		"2": {
+		    "description": "Most",
+		    "points": 0.8,
+		    "long_description": "All @Override tags in place, but one or two does not have a (correct) reason, or is unnecessary (contains/remove/addAll/isEmpty)"
+		},
+		"3": {
+		    "description": "Many problems",
+		    "points": 0.6,
+		    "long_description": "All @Override tags in place, but more than two are incorrect or unnecessary."
+		},
+		"4": {
+		    "description": "Partial",
+		    "points": 0.4,
+		    "long_description": "Missing @Override on some new overridings."
+		},
+		"5": {
+		    "description": "Minimal",
+		    "points": 0.2,
+		    "long_description": "An @Override on at least one overriding."
+		},
+		"6": {
+		    "description": "No Marks",
+		    "points": 0,
+		    "long_description": "No changes, or missing @Override on all new overrides."
+		}
+	    }
+	},
+	"6": {
+	    "description": "Quality: assertions",
+	    "long_description": "The invariant is asserted appropriately.",
+	    "ratings": {
+		"1": {
+		    "description": "Full Marks",
+		    "points": 2.0,
+		    "long_description": "Invariant asserted in every public method of the main class and the iterator class, and there at at least four such methods.  And the iterator is asserted at the end of all methods that could change the data structure (add/next/remove in particular)"
+		},
+		"2": {
+		    "description": "Mostly good",
+		    "points": 1.6,
+		    "long_description": "Some methods that should assert the invariant twice only do it once, but every public method asserts at least once."
+		},
+		"3": {
+		    "description": "Fair",
+		    "points": 1.2,
+		    "long_description": "Invariant asserted in all public methods of main class and there are at least two such (size and iterator)."
+		},
+		"4": {
+		    "description": "Poor",
+		    "points": 0.8,
+		    "long_description": "Invariant asserted in at least half of public methods, and there at least four of these."
+		},
+		"5": {
+		    "description": "Minimal Credit",
+		    "points": 0.4,
+		    "long_description": "Invariant asserted in at least one public method."
+		},
+		"6": {
+		    "description": "No Marks",
+		    "points": 0,
+		    "long_description": "Invariant never asserted in any public method."
+		}
+	    }
+	},
+	"8": {
+	    "description": "Quality: Code Spacing",
+	    "long_description": "Code spacing reflect structure",
+	    "ratings": {
+		"1": {
+		    "description": "Full Marks",
+		    "points": 1,
+		    "long_description": "Code indented appropriately (e.g. Eclipse)."
+		},
+		"2": {
+		    "description": "Partial",
+		    "points": 0.5,
+		    "long_description": "One bad case of indentation."
+		},
+		"3": {
+		    "description": "No Marks",
+		    "points": 0,
+		    "long_description": "No changes, or code indentation/spacing hard to read."
+		}
+	    }
+	},
+	"9": {
+	    "description": "Code: Node data structure",
+	    "long_description": "The data structure is sensible.",
+	    "ratings": {
+		"1": {
+		    "description": "Full Marks",
+		    "points": 1.0,
+		    "long_description": "Node class is private static and generic. prev/next/data all correctly defined,  All default access.  Default access constructor."
+		},
+		"2": {
+		    "description": "Most Marks",
+		    "points": 0.8,
+		    "long_description": "Some are not default, or class is not private, or some names changed"
+		},
+		"3": {
+		    "description": "Fair",
+		    "points": 0.6,
+		    "long_description": "Multiple minor problems (previous list), or Node includes unused extra fields, or class isn't static or generic."
+		},
+		"4": {
+		    "description": "Poor",
+		    "points": 0.4,
+		    "long_description": "Includes a used extra field or one is missing or wrong type, or multiple medium problems."
+		},
+		"5": {
+		    "description": "Minimal",
+		    "points": 0.2,
+		    "long_description": "Includes some good things."
+		},
+		"6": {
+		    "description": "No Marks",
+		    "points": 0,
+		    "long_description": "Nothing good."
+		}
+		}
+	},
+	"100": {
+	    "description": "Design: LinkedCollection data structure",
+	    "long_description": "The data structure is sensible.",
+	    "ratings": {
+		"1": {
+		    "description": "Full Marks",
+		    "points": 1.0,
+		    "long_description": "dummy/count/version declared correctly,  All private."
+		},
+		"2": {
+		    "description": "Most Marks",
+		    "points": 0.8,
+		    "long_description": "Some are not private, or some names changed"
+		},
+		"3": {
+		    "description": "Fair",
+		    "points": 0.6,
+		    "long_description": "Includes unused extra fields."
+		},
+		"4": {
+		    "description": "Poor",
+		    "points": 0.4,
+		    "long_description": "Includes a used extra field or one is missing or wrong type."
+		},
+		"5": {
+		    "description": "Minimal",
+		    "points": 0.2,
+		    "long_description": "Includes some good things."
+		},
+		"6": {
+		    "description": "No Marks",
+		    "points": 0,
+		    "long_description": "Nothing good."
+		}
+	    }
+	},
+	"110": {
+	    "description": "Code: Data structure invariant of LinkedCollection",
+	    "long_description": "The wellFormed method for LinkedCollection is reasonably implemented.",
+	    "ratings": {
+		"1": {
+		    "description": "Full Marks",
+		    "points": 1.0,
+		    "long_description": "optionally uses variant of T&H.  Checks that dummy isn't null. Checks every time a.next = b than b.prev is a.  Checks that the dummy's data is itself and that no other node has data that is itself. (No need that it isn't a node in general, but that's OK.)  Checks that count is correct."
+		},
+		"2": {
+		    "description": "Most Marks",
+		    "points": 0.8,
+		    "long_description": "Misses a minor (indicidual) check."
+		},
+		"3": {
+		    "description": "Fair",
+		    "points": 0.6,
+		    "long_description": "Misses multiple (individual) checks, or has no checks for data or for count."
+		},
+		"4": {
+		    "description": "Poor",
+		    "points": 0.4,
+		    "long_description": "Never checks that all next links (in a loop) have a corresponding prev link, or misses both count and data checks."
+		},
+		"5": {
+		    "description": "Minimal",
+		    "points": 0.2,
+		    "long_description": "Includes some good things."
+		},
+		"6": {
+		    "description": "No Marks",
+		    "points": 0,
+		    "long_description": "Nothing good."
+		}
+	    }
+	},
+	"120": {
+	    "description": "Design: Iterator data structure",
+	    "long_description": "The iterator data structure looks reasonable.",
+	    "ratings": {
+		"1": {
+		    "description": "Full Marks",
+		    "points": 1.0,
+		    "long_description": "cursor/isCurrent/colVersion all correctly defined,  All non-public access.  Default constructor and boolean constructor (which does nothing) are present."
+		},
+		"2": {
+		    "description": "Most Marks",
+		    "points": 0.8,
+		    "long_description": "Some are public, or some names changed"
+		},
+		"3": {
+		    "description": "Fair",
+		    "points": 0.6,
+		    "long_description": "Includes unused extra fields."
+		},
+		"4": {
+		    "description": "Poor",
+		    "points": 0.4,
+		    "long_description": "Includes a used extra field or one is missing or wrong type."
+		},
+		"5": {
+		    "description": "Minimal",
+		    "points": 0.2,
+		    "long_description": "Includes some good things."
+		},
+		"6": {
+		    "description": "No Marks",
+		    "points": 0,
+		    "long_description": "Nothing good."
+		}
+	    }
+	},
+	"130": {
+	    "description": "Code: Data structure invariant of Iterator",
+	    "long_description": "The Iterators wellFormed is reasonable implemented.",
+	    "ratings": {
+		"1": {
+		    "description": "Full Marks",
+		    "points": 1.0,
+		    "long_description": "First checks outer invariant (or else false), then version match (or else true) and then checks if cursor is in list and for non-dummy is isCurrent."
+		},
+		"2": {
+		    "description": "Most Marks",
+		    "points": 0.8,
+		    "long_description": "Duplicates code from outer class (or uses some other workaround for the LinkedCollection.this.wellFormed syntax) or misses an individual check or has all checks but in the wrong order."
+		},
+		"3": {
+		    "description": "Fair",
+		    "points": 0.6,
+		    "long_description": "Misses one major check."
+		},
+		"4": {
+		    "description": "Poor",
+		    "points": 0.4,
+		    "long_description": "Basic form looks correct but problems."
+		},
+		"5": {
+		    "description": "Minimal",
+		    "points": 0.2,
+		    "long_description": "Includes some good things."
+		},
+		"6": {
+		    "description": "No Marks",
+		    "points": 0,
+		    "long_description": "Nothing good."
+		}
+	    }
+	},
+	"140": {
+	    "description": "Code: addAll decorate overriding",
+	    "long_description": "The addAll method is overridden reasonably.",
+	    "ratings": {
+		"1": {
+		    "description": "Full Marks",
+		    "points": 1.0,
+		    "long_description": "The overiding checks if the addend is this (an optionally that the count is positive) in which case, it uses a for loop on pointers (not an iterator) that goes until it passes the original last pointer adding elements, and returns true if it isn't empty.  Otherwise it returns a super call of the same method."
+		},
+		"2": {
+		    "description": "Most Marks",
+		    "points": 0.8,
+		    "long_description": "Special case correct, but re-implements superclass implementation in 'else' rather than a super call."
+		},
+		"3": {
+		    "description": "Fair",
+		    "points": 0.6,
+		    "long_description": "Uses a cast to LinkedCollection or uses an axuiliary structure or always uses special case, even if not 'this'."
+		},
+		"4": {
+		    "description": "Poor",
+		    "points": 0.4,
+		    "long_description": "Basic form looks correct but major problems (e.g. doesn't keep track of old 'last')."
+		},
+		"5": {
+		    "description": "Minimal",
+		    "points": 0.2,
+		    "long_description": "Code shows that 'addAll' needs special treatment."
+		},
+		"6": {
+		    "description": "No Marks",
+		    "points": 0,
+		    "long_description": "Nothing good."
+		}
+	    }
+	},	
+	"150": {
+	    "description": "Code: Implementation is reasonable",
+	    "long_description": "The methods are implemented appropriately.",
+	    "ratings": {
+		"0": {
+		    "description": "Full Marks",
+		    "points": 5.0,
+		    "long_description": "All methods (including constructor/size/add/iterator(*2)/hasNext/next/remove) appear correct and only addBefore has an 'if' that's not an error check.  Code tries to line up prev/next assignments together (parallel)"
+		},
+		"1": {
+		    "description": "Almost full marks",
+		    "points": 4.5,
+		    "long_description": "One or two extra 'if's. Otherwise code looks nice."
+		},
+		"2": {
+		    "description": "Mostly good",
+		    "points": 4,
+		    "long_description": "Everything implemented but some methods appear broken for boundary cases, or overriding from Abstract collection with buggy code or duplicate code."
+		},
+		"3": {
+		    "description": "Fair",
+		    "points": 3,
+		    "long_description": "Something completely missing, but otherwise good, or many methods have cases missing."
+		},
+		"4": {
+		    "description": "Poor",
+		    "points": 2,
+		    "long_description": "Good progress, but multiple things are missing/stubbed"
+		},
+		"5": {
+		    "description": "Minimal",
+		    "points": 1,
+		    "long_description": "At least a couple easy methods (e.g. size/iterator) are done right."
+		},
+		"6": {
+		    "description": "No Marks",
+		    "points": 0,
+		    "long_description": "Hardly started."
+		}
+	    }
+	},
+	"200": {
+	    "description": "Test: TestInvariant",
+	    "long_description": "All 75 tests in TestInvariant pass.",
+	    "ratings": {
+		"0": {
+		    "description": "Full Marks",
+		    "points": 1.5,
+		    "long_description": "All 75 tests pass. 0.02 per text."
+		},
+		"15": {
+		    "description": "No Marks",
+		    "points": 0,
+		    "long_description": "No test passes."
+		}
+	    }
+	},
+	"215": {
+	    "description": "Tests: TestLinkedCollection",
+	    "long_description": "All tests testNN pass",
+	    "ratings": {
+		"0": {
+		    "description": "All tests pass",
+		    "points": 2.5
+		},
+		"1": {
+		    "description": "First failure test8N",
+		    "points": 2.3
+		},
+		"2": {
+		    "description": "First failure test7N",
+		    "points": 2.0
+		},
+		"3": {
+		    "description": "First failure test6N",
+		    "points": 1.8
+		},
+		"4": {
+		    "description": "First failure test5N",
+		    "points": 1.5
+		},
+		"5": {
+		    "description": "First failure test4N",
+		    "points": 1.3
+		},
+		"6": {
+		    "description": "First failure test3N",
+		    "points": 1.0
+		},
+		"7": {
+		    "description": "First failure test2N",
+		    "points": 0.8
+		},
+		"8": {
+		    "description": "First failure test1N",
+		    "points": 0.5
+		},
+		"9": {
+		    "description": "First failure test0N (but some test passes)",
+		    "points": 0.3
+		},
+		"10": {
+		    "description": "No test passes",
+		    "points": 0
+		}
+	    }
+	},
+	"240": {
+	    "description": "Test: TestDirect",
+	    "long_description": "All the 25 lettered tests in TestDirect pass.",
+	    "ratings": {
+		"0": {
+		    "description": "Full Marks",
+		    "points": 2.5,
+		    "long_description": "All 25 tests pass: testA,...,testW (0.1 points per test."
+		},
+		"1": {
+		    "description": "1 failure",
+		    "points": 2.4,
+		    "long_description": "24 tests pass."
+		},
+		"2": {
+		    "description": "2 failures",
+		    "points": 2.3,
+		    "long_description": "23 tests pass."
+		},
+		"3": {
+		    "description": "3 failures",
+		    "points": 2.2,
+		    "long_description": "22 tests pass."
+		},
+		"18": {
+		    "description": "No Marks",
+		    "points": 0,
+		    "long_description": "No test passes."
+		}
+	    }
+	},
+	"265":{
+	    "description":"Tests: Efficiency Tests",
+	    "long_description":"Efficiency tests pass in reasonable time.",
+	    "ratings": {
+		"0": {
+		    "description":"Full Marks",
+		    "long_description": "All tests pass in reasonable time",
+		    "points":2.0
+		},
+		"2": {
+		    "description": "80%",
+		    "long_description": "First failure is testE",
+		    "points":1.6
+		},
+		"4": {
+		    "description": "60%",
+		    "long_description": "First failure is testD",
+		    "points":1.2
+		},
+		"6": {
+		    "description": "40%",
+		    "long_description": "First failure is testC",
+		    "points":0.8
+		},
+		"8": {
+		    "description": "20%",
+		    "long_description": "First failure is testB",
+		    "points":0.4
+		},
+		"10": {
+		    "description": "No Credit",
+		    "long_description": "testA does not pass in reasonable time",
+		    "points":0.0
+		}
+	    }
+	},
+	"285":{
+	    "description":"Tests: Random tests",
+	    "long_description":"RandomTest passes.",
+	    "ratings":{
+	    	"1":{"description":"Full Marks","points":1.5},
+	      	"3":{"description":"No Marks","points":0}
+	    }
+	}
+    }
+}

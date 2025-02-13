@@ -1,0 +1,189 @@
+\documentclass[10pt]{article}
+
+\usepackage[problem]{handout}
+\usepackage{alltt}
+\usepackage{hyperref}
+
+\setlength{\unitlength}{2pt}
+
+% latex2html wrecks \framebox commands in pictures
+% so we give it a new name in a way that latex2html 
+% doesn't understand so it will leave them alone.
+\let\FrameBox=\framebox
+
+\class{CompSci 351 / CompSt 751: Data Structures \& Algorithms}
+\period{Spring 2023}
+\title[Homework \#6]{Homework \# 6 \\ 
+\textbf{due Monday, March 6, 7:00 PM }}
+
+
+\begin{document}
+\maketitle
+
+This assignment will focus on the concepts of generics,
+and doubly-linked lists with dummy nodes in a collection class.
+
+Use this link to accept the assignment:
+\begin{quote}
+\url{INVITE_LINK}
+\end{quote}
+
+\section{The Data Structure}
+
+For this homework, you will implement a \emph{generic} implementation of
+the standard collection interface using a \emph{cyclic doubly-linked
+list with a dummy node}.  The fields of the class should be exactly
+the following:
+\begin{description}
+\item[dummy] The dummy node (never null).
+\item[count] The number of elements in the collection.
+\item[version] A version stamp to implement fail-fast semantics.
+\end{description}
+The nodes should be doubly linked: every link in the forward direction
+(\texttt{p.link == q}) should be reflected by a link in the reverse
+direction (\texttt{q.prev == p}).  There should be no null pointers in
+these links, which makes the programming simpler.
+(The data in the nodes can be null, of course.)
+The data field of the dummy node should be assigned the ``impossible''
+value of itself, that is (\texttt{dummy.data == dummy}) should be
+true.  None of the non-dummy nodes should have this data value.
+Finally the ``count'' field should be one fewer than the number of
+nodes in the (cyclic) list.
+
+The list contains a \emph{dummy} node even when it represents an empty
+collection.  
+At the start, when the collection is empty, the \verb|next| and \verb|prev|
+fields of the dummy node will point back to the dummy node.  After elements are
+added, the dummy node's \verb|next| pointer refers to the first (non-dummy) node in the list
+and the \verb|prev| pointer refers to the last node in the list.
+
+\section{Generics}
+
+In some earlier programs, you may have \emph{used} generic classes.
+This week you will be \emph{creating} your own generic class,
+\textsf{LinkedCollection}.
+The purpose of this is to familiarize you with making classes that
+are not limited to a specific element type.  
+Inside the generic class, you can use type parameter \verb|E|
+everywhere where an explicit type would be used (e.g., \verb|Transaction|
+in Homework \#~4).
+Furthermore, since the \verb|Node| class is also generic, you must
+create instances of \textsf{Node} using this parameter as in
+\verb|new Node<E>(...)|.
+
+\section{The methods}
+
+As usual, you should only override the methods that need to be
+overridden for Java reasons (``required''), correctness
+(``implementation'') or efficiency.
+
+In this homework, you will find
+that one of the methods implemented by \texttt{AbstractCollection}
+\emph{almost always} does the right thing, but 
+needs to be overridden for a special case.  Until this is done, you will fail one of the
+tests with a stale iterator problem.  In your overriding, except for
+the special case, you should
+defer to the \texttt{AbsractCollection} implementation using the
+syntax  \texttt{super.methodName(\ldots)} to do the work.  This kind
+of overriding should be commented as \texttt{// decorate} because it
+only adds a little bit to the superclass implementation.
+
+Don't use any auxiliary structures (arrays or other collections) to do
+the work of any methods.  We also don't require, or even recommend that
+you implement a \texttt{clone()} method.
+
+You \emph{may} optionally override the \texttt{toString} method for
+debugging purposes.  We have no tests of \texttt{toString} this time.
+
+\section{The Iterator}
+
+As with Homework \#3, the collection's iterator will be ``addable.''
+Since it is a nested \emph{non}-static class, it should \emph{not}
+have its own generic parameter.  Instead it will use the outer class'
+generic type parameter.  It will implement \texttt{Iterator} with the
+generic parameter from the outer class.
+
+The iterator should have the following data structure:
+\begin{description}
+  \item[cursor] The pointer to the node with the element that was last
+    returned by ``next'' until/unless that element is removed, in
+    which case it moves back to the previous node.  In all cases, the
+    ``next'' element (if any) will be the one in the node \emph{after} the
+    cursor.  When the iterator is initialized, the ``cursor'' starts
+    on the dummy node.  If the node after the cursor is the dummy node,
+    then there is no next element.
+  \item[isCurrent] This boolean is true if the cursor is pointing to a
+    node with the current element (the one that can be removed).  It
+    should never be true that the dummy's data could be removed.
+  \item[colVersion] The version of the collection that this iterator
+    can work with.  It is used to implement fail-fast semantics.
+\end{description}
+You will need to implement \texttt{wellFormed} for the iterator (as
+well as for the main class) that checks this data structure.  You
+should be able to figure out the conditions.  Make sure to follow
+the convention we gave you in Homework \#3---checking the outer
+invariant first and then checking for version mismatch.  Remember that
+if the version does not match, the the invariant is assumed to be true.
+
+\section{What You Need To Do}
+
+We recommend you proceed in the following manner:
+\begin{enumerate}
+  \item Add the required data structure fields, methods and nested
+    classes to
+    \texttt{LinkCollection.java} so that all errors are gone.
+    In particular, the \texttt{Spy} class should compile without
+    errors, and without being changed.
+  \item Write the \texttt{wellFormed} methods, using
+    \texttt{TestInvariant}.
+  \item Implement methods needed to pass the \texttt{TestDirect} and
+    \texttt{TestLinkedCollection} tests.  (Recall that
+    \texttt{TestCollection} is an abstract class and should not be
+    run.)
+  \item Make sure that every method you add is either
+    \verb|@Override| with a reason (one of the four: required,
+    implementation, efficiency or decorate) or has a full
+    documentation comment (with \verb|@param|,
+    \verb|@exception| and \verb|@return| parts if appropriate). 
+  \item Use random testing to find any remaining implementation
+    errors.
+  \item Use efficiency testing to determine any additional overridings
+    that may be necessary.  After passing efficiency testing, check
+    that no bugs have been introduced by running random testing again.
+\end{enumerate}
+There are no locked tests in this assignment.
+
+Your class should use the same style as in the previous homework
+assignments: it should assert the correctness of the invariant
+at the beginning and end of any method that could change the state
+of the data structure, and at the beginning of every public method.
+The invariant should also be checked at the end of the
+constructor and when the iterator invariant is checked.
+
+Remember to update version numbers whenever the collection changes the
+number of elements.
+
+\section{Files}
+
+The homework repository
+contains the following files:
+\begin{description}
+\item[src/TestLinkedCollection.java] This driver tests the collection operations.
+\item[src/TestDirect.java] 
+\item[src/TestInvariant.java] Test driver for invariants of list and iterator.
+\item[src/TestEfficiency.java] Test driver that runs with larger data sets.
+\item[src/edu/uwm/cs351/LinkedCollection.java] This is the skeleton file you should work with.
+\end{description}
+
+\end{document}
+
+% LocalWords:  CS TreatList cc cs cp cs src SKEL turnin myworld ostream const
+% LocalWords:  href html LocalWords ADT bool int ItemType cerr endl rethrow
+% LocalWords:  SortedList prev LinkedCollection AbstractCollection
+
+
+
+
+
+% LocalWords:  methodName superclass toString isCurrent boolean
+% LocalWords:  colVersion wellFormed
