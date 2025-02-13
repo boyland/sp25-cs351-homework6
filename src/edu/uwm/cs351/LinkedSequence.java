@@ -423,13 +423,15 @@ public class LinkedSequence<E> // TODO: implements what?
 		/**
 		 * Create an instance of LinkedCollection so that we can test the invariant checker.
 		 * @param d dummy node
-		 * @param c count
+		 * @param s count
+		 * @param c cursor
 		 * @return instance of LinkedCollection that has not been checked.
 		 */
-		public <E> LinkedSequence<E> newInstance(Node<E> d, int c) {
+		public <E> LinkedSequence<E> newInstance(Node<E> d, int s, Node<E> c) {
 			LinkedSequence<E> result = new LinkedSequence<>(false);
 			result.dummy = d;
-			result.count = c;
+			result.count = s;
+			result.cursor = c;
 			return result;
 		}
 		
