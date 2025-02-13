@@ -6,9 +6,8 @@ import java.util.function.Consumer;
 // This is a Homework Assignment for CS 351 at UWM
 
 /**
- * A cyclic doubly-linked list implementation of the Java Collection interface.
- * The iterators returned are {@link Addable} and strictly fail fast.
- * @param E element type of the collection
+ * A cyclic doubly-linked list implementation of the textbook Sequence ADT.
+ * @param E element type of the sequence
  */
 public class LinkedSequence<E> // TODO: implements what?
     implements Cloneable // ### \subsection{Implements}
@@ -139,7 +138,7 @@ public class LinkedSequence<E> // TODO: implements what?
 	public void start( )
 	{
 		assert wellFormed() : "invariant failed at start of start";
-		cursor = dummy;
+		cursor = dummy.next;
 		assert wellFormed() : "invariant failed at end of start";
 	}
 
@@ -321,6 +320,7 @@ public class LinkedSequence<E> // TODO: implements what?
 			if (cursor == n) newCursor = copy;
 			prev = copy;
 		}
+		prev.next = newDummy;
 		newDummy.prev = prev;
 		
 		result.cursor = newCursor;
